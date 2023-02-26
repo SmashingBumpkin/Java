@@ -1,36 +1,30 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!"); 
-        int x = 2;
-        System.out.println(doIt(x,3));
-        //histogram(40, 100);
-
-        counter c1 = new counter();
-        counter c2 = new counter();
-        c1.tic();
-        c1.tic();
-        c2.tic();
-        System.out.println(c1.get());
-        System.out.println(c2.get());
-        c1.universaltic();
-        c1.universaltic();
-        c1.universaltic();
-        System.out.println(c2.getuni());
+        Map <Integer, Integer> my_histogram = histogram(2000, 500);
+        Set<Integer> orderedKeys = new TreeSet<>(my_histogram.keySet());
+        System.out.println(my_histogram);
+        for (int walker : orderedKeys) {
+            int occurences = my_histogram.get(walker);
+            System.out.println(walker + "*".repeat(occurences));
+          }
     }
 
-    public static int doIt(int x, int y){
-        if (y == 0){
-            return x;
-        }
-        return doIt(x+1, y-1);
-    }
-    
-    public static void histogram(int walkers, int steps){
+    public static Map<Integer,Integer> histogram(int walkers, int steps){
+        int[] results = new int[walkers];
         for (int i=0; i < walkers; i++){
-            System.out.println(walker(steps));
+            results[i] = walker(steps);
         }
+        Map<Integer, Integer> histDic = new HashMap<>();
+        for (int result : results) {
+            histDic.put(result, histDic.getOrDefault(result, 0) + 1);
+        }
+        return histDic;
     }
 
     public static int walker(int steps){
@@ -47,4 +41,12 @@ class HelloWorld {
         }
         return position;
     }
+
+    public static int doIt(int x, int y){
+        if (y == 0){
+            return x;
+        }
+        return doIt(x+1, y-1);
+    }
+    
 }
