@@ -5,12 +5,17 @@
 
     .word 17
     .word 25
+    .word 16
+    .word 12
+    .word 16
+    
    
 .text # By default starts at address 0x00400000
 
     lui x5, 0x10010
     lw x3, 0(x5)
     lw x4, 4(x5)
+    lw x5, 8(x5)
     add x6, x3, x4
     sw x6, 8(x5)
     ori x17, x0, 10
