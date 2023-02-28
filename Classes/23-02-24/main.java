@@ -11,7 +11,12 @@ class HelloWorld {
         System.out.println(my_histogram);
         for (int walker : orderedKeys) {
             int occurences = my_histogram.get(walker);
-            System.out.println(walker + "*".repeat(occurences));
+            String stars = "";
+            for (int i=0; i<occurences; i++) {
+                stars += "*";
+            }
+            //System.out.println(walker + ": " + stars);
+            System.out.printf("\n%i %s ",  walker, stars);
           }
     }
 
