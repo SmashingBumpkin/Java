@@ -2,7 +2,7 @@
  * Created by pietrocenciarelli on 14/03/22.
  */
 
-public class Homework_1 {
+ public class Homework_1 {
 
     /* Implementation of integer lists.
     Implement classes IntegerList and OutOfBoundsException
@@ -25,9 +25,9 @@ public class Homework_1 {
             l.add(44);
             l.remove(0);
             l.remove(1);
-            l.printList();
             l.add(88);
             l.add(81);
+            l.printList();
             l.add(2, 20);
             l.add(0, 66);
             l.printList();
