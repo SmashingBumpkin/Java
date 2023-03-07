@@ -81,9 +81,9 @@ public class IntegerList {
         sortHelper(false, this);
     }
     
-    private void sortHelper(boolean haveSorted, IntegerList top_level_list) {
+    private void sortHelper(boolean have_sorted, IntegerList top_level_list) {
         if (tail == null){
-            if (haveSorted == true){
+            if (have_sorted == true){
                 top_level_list.sortHelper(false, top_level_list);
             }
             else {
@@ -92,7 +92,7 @@ public class IntegerList {
         }
         else {
             if (head <= tail.head){
-                tail.sortHelper(haveSorted, top_level_list);
+                tail.sortHelper(have_sorted, top_level_list);
             }
             else {
                 int temp = head;
