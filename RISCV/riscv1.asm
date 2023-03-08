@@ -1,0 +1,3 @@
+.word
+	
+.text # PRINT THE FIRST N FIBONACCI NUMBERS
