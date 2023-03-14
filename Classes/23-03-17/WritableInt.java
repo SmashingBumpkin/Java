@@ -1,0 +1,6 @@
+/**
+ * Created by pietrocenciarelli on 14/03/21.
+ */
+public interface WritableInt {
+    void assign (int val);
+}

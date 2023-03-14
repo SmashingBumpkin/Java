@@ -4,6 +4,9 @@
 public class TestC {
     public static void main(String[] args) {
         // plays with hierarchy
+        C2 jeff = new C2();
+        jeff.floodge();
+
         C1 x = new C1(3);
         x.ciao("hallo x! a = 3, b = " + x.b);
         System.out.println("...note: b has default value " + x.b);
