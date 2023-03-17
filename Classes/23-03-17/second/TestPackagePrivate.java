@@ -11,6 +11,7 @@ public class TestPackagePrivate {
 
         System.out.println(p.ninth); // access to a public field
         // System.out.println(p.tenth); // acces to a private field (failed!)
+        System.out.println(p.eleventh); //Ok, because it's in the same packge, even though not a subclass
         System.out.println(p.twelfth); // access to a protected field
         // protectd seems to behave like public, but...
     }
