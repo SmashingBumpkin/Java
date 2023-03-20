@@ -1,0 +1,19 @@
+    Write a recursive function to count the number of nodes in a linked list.
+
+    Write a recursive function to find the sum of all elements in a linked list.
+
+    Write a recursive function to find the maximum element in a linked list.
+
+    Write a recursive function to reverse a linked list.
+
+    Write a recursive function to delete all nodes with a given value from a linked list.
+
+    Write a recursive function to insert a node into a sorted linked list.
+
+    Write a recursive function to merge two sorted linked lists into one sorted linked list.
+
+    Write a recursive function to check if a linked list is a palindrome.
+
+    Write a recursive function to remove duplicates from a linked list.
+
+    Write a recursive function to rotate a linked list by k nodes.

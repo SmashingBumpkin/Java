@@ -9,7 +9,7 @@ lista:	.word n01
 	ori a7, zero, 1  #instruction to print
 	li a0, 0#loads initial sum of list to a0
 	beq s0, zero, fine #if the list has no body branch to end
-ciclo:	lw t0, 0(s0) #loads next section of list to t0
+ciclo:	lw t0, 0(s0) #loads next object in list to t0
 	lw s0, 4(s0) #loads next address to s0
 	add a0, a0, t0 #adds t0 to sum of list
 	bne s0, zero, ciclo #if next address isNT 0, start loop
