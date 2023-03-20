@@ -2,7 +2,7 @@
 #base case if number is 0, answer 0
 .text 
 	li a0, 5
-	jal fattoriale
+	jal ra, fattoriale
 	
 	#printin result
 	li, a7, 1
