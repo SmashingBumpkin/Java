@@ -13,10 +13,12 @@
 	ecall
 	
 	
-fattoriale: bne a0, zero, ricursivo #if not 0, branch down 3 lines, else if == 0:
+fattoriale: 
+	bne a0, zero, ricursivo #if not 0, branch down 3 lines, else if == 0:
 	li a0, 1 #returns 1
 	jalr zero, ra, 0 #jumps back to where to line 24
-ricursivo: addi sp, sp, -8 #moves stack pointer back 4
+ricursivo: 
+	addi sp, sp, -8 #moves stack pointer back 4
 	sw ra, 0(sp) #saves new return address to top of stack
 	sw a0, 4(sp) #saves n to stack as well, so it's nice n safe
 	addi a0, a0, -1 #iterates n down by -1
