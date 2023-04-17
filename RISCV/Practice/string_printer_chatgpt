@@ -1,0 +1,55 @@
+.data
+hello_str:  .asciz "Hello world!\n"  # Define a null-terminated string
+
+.text
+.globl _start
+_start:                           # Start of the program
+# Load the address of the string into a register
+la a0, hello_str
+# Call the print_string function
+call print_string
+
+# Exit syscall
+li a7, 10
+ecall
+print_string:
+# Save callee-save registers on the stack
+addi sp, sp, -16
+sw ra, 0(sp)
+sw s0, 8(sp)
+
+# Store the string address into a temporary register
+mv s0, a0
+
+# Print the string
+li a0, 1        # STDOUT
+lw a1, 0(s0)    # Load the first character into a register
+jal print_loop  # Loop through the string
+
+# Restore callee-save registers from the stack
+lw ra, 0(sp)
+lw s0, 8(sp)
+addi sp, sp, 16
+
+# Return
+ret
+
+print_loop:
+beqz a1, end_print    # If the character is null, exit the loop
+
+# Print the character
+li a7, 4          # Print integer
+ecall
+
+# Increment the string address to point to the next character
+addi s0, s0, 1
+
+# Load the next character into a register
+lw a1, 0(s0)
+
+# Jump back to the start of the loop
+j print_loop
+
+end_print:
+# Return
+ret

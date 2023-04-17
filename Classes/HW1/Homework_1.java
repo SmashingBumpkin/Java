@@ -4,7 +4,8 @@
 
  public class Homework_1 {
 
-    /* Implementation of integer lists.
+    /* 
+    Implementation of integer lists.
     Implement classes IntegerList and OutOfBoundsException
     in such a way that the following main produces the output
     specified below. The add(int element) adds element on top
@@ -14,7 +15,7 @@
     raised. Method remove(int index) removes the index-th
     element of the list (may raise the exception too). Method
     sort(), sorts the list.
-     */
+    */
 
     public static void main(String[] args) {
 

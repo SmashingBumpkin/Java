@@ -1,0 +1,21 @@
+.data
+	hello_str: .asciz "Hello world!"  # Define a null-terminated string
+	repeats: .word 4
+
+.text
+	la a0, hello_str
+	lw a1, repeats
+	jal ra, string_repeater
+	
+	li a7, 10
+	ecall
+	
+	string_repeater:
+		li a7, 4
+		beq a1, zero, end
+		loop:	
+			addi a1, a1, -1
+			ecall
+			bne a1, zero, loop
+		end:
+		jalr zero, ra, 0
