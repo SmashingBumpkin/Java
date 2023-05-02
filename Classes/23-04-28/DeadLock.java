@@ -8,7 +8,7 @@ public class DeadLock {
     Using sleep (see DeadManWalking) to make deadlock happen!
     */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {----
 
         Object monitor1 = new Object();
         Object monitor2 = new Object();
