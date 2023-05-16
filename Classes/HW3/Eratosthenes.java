@@ -26,13 +26,16 @@ public class Eratosthenes {
 
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        EratoStation chain = new EratoStation(2);
+        // EratoStation chain = new EratoStation(2);
         // EratoStation2 chain = new EratoStation2(2);
+        EratoStation4 chain = new EratoStation4(2);
         chain.start();
 
         try {
-            for (int number = 3; number < 100; number++)
+            for (int number = 3; number < 100; number++){
+                System.out.println("Number: " + number);
                 chain.pushBuffer(number);
+            }
         }
         catch (InterruptedException e) {
             System.out.println("Shouldn't happen!");
